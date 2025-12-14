@@ -1,10 +1,23 @@
 import { Router, Request, Response } from 'express';
 import { Task } from '../models/task';
+import { body, validationResult } from 'express-validator';
 
 const router = Router();
 let tasks: Task[] = [];
 
+const taskValidationRules = [
+  body('title').notEmpty().withMessage('Title is required'),
+  body('description').notEmpty().withMessage('Description is required'),
+  body('completed').isBoolean().withMessage('Completed must be a boolean'),
+];
+
 router.post('/', (req: Request, res: Response) => {
+  const errors = validationResult(req);
+
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
+
   const task: Task = {
     id: tasks.length + 1,
     title: req.body.title,
@@ -31,6 +44,12 @@ router.get('/:id', (req: Request, res: Response) => {
 });
 
 router.put('/:id', (req: Request, res: Response) => {
+  const errors = validationResult(req);
+
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
+
   const task = tasks.find((t) => t.id === parseInt(req.params.id));
 
   if (!task) {

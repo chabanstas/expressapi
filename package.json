@@ -7,15 +7,21 @@
     "start": "ts-node src/index.ts",
     "build": "tsc",
     "serve": "node dist/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "eslint": "eslint . --fix"
   },
   "author": "stan",
   "license": "ISC",
   "dependencies": {
+    "@eslint/js": "^9.39.2",
     "@types/express": "^5.0.6",
     "@types/node": "^25.0.2",
+    "eslint": "^9.39.2",
     "express": "^5.2.1",
+    "globals": "^16.5.0",
+    "jiti": "^2.6.1",
     "ts-node": "^10.9.2",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.49.0"
   }
 }

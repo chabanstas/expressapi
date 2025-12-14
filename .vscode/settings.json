@@ -1,0 +1,25 @@
+{
+  "editor.formatOnSave": true,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "editor.tabSize": 2,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit"
+  },
+  "prettier.singleQuote": true,
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "git.terminalAuthentication": false,
+  "typescript.tsdk": "node_modules/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "groovyLint.fix.enable": true,
+  "[groovy]": {
+    "editor.tabSize": 4
+  },
+  "prettier.arrowParens": "always",
+  "prettier.trailingComma": "es5",
+  "prettier.printWidth": 80,
+  "prettier.endOfLine": "auto",
+  "prettier.tabWidth": 2
+}
